@@ -18,8 +18,8 @@ static void apply_patches(const HANDLE process)
 		VirtualProtectEx(process, (void*)(addr), size, old_protect, &old_protect);
 	};
 
-	const auto resolution_x = GetSystemMetrics(SM_CXSCREEN);
-	const auto resolution_y = GetSystemMetrics(SM_CYSCREEN);
+	const auto resolution_x = 1280;
+	const auto resolution_y = 992; //compensate for title bar
 
 	const auto fullscreen = (char)(true);
 	patch_extern(0x44DCC9, &fullscreen, sizeof(fullscreen));
