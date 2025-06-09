@@ -21,7 +21,7 @@ static void apply_patches(const HANDLE process)
 	const auto resolution_x = 1280;
 	const auto resolution_y = 992; //compensate for title bar
 
-	const auto fullscreen = (char)(true);
+	const auto fullscreen = (char)(false);
 	patch_extern(0x44DCC9, &fullscreen, sizeof(fullscreen));
 
 	patch_extern(0x40D160, &resolution_y, sizeof(resolution_y));
