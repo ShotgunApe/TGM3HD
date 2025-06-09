@@ -91,12 +91,12 @@ int main(const int argc, const char* argv[])
 	startup_info.cb = sizeof(startup_info);
 
 	char cmdline[256];
-	strcpy_s(cmdline, "game");
+	strcpy(cmdline, "game");
 
 	for (auto i = 1; i < argc; i++)
 	{
-		strcat_s(cmdline, " ");
-		strcat_s(cmdline, argv[i]);
+		strcat(cmdline, " ");
+		strcat(cmdline, argv[i]);
 	}
 
 	CreateProcess(nullptr, cmdline, nullptr, nullptr, false, CREATE_SUSPENDED, nullptr, nullptr, &startup_info, &proc_info);
